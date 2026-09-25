@@ -256,20 +256,14 @@ function App() {
       <header className="site-header" role="banner">
         <div className="container nav-shell">
           <a className="brand" href="#inicio" aria-label="EMAUS POS de centrivosoft.com - Inicio">
-            <div className="brand-logo-wrap">
-              <svg className="brand-svg-icon" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect x="2" y="2" width="38" height="26" rx="5" stroke="#0a77f5" strokeWidth="3" fill="#eaf3ff"/>
-                <path d="M12 12h18M12 18h12" stroke="#0a77f5" strokeWidth="2.5" strokeLinecap="round"/>
-                <path d="M16 28l-4 8h20l-4-8" fill="#082347"/>
-                <path d="M10 36h24" stroke="#082347" strokeWidth="3" strokeLinecap="round"/>
-                <circle cx="37" cy="11" r="7" fill="#0a77f5"/>
-                <path d="M34 11l2 2 4-4" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-            <div className="brand-text">
-              <span className="brand-title"><strong>EMAUS</strong> POS</span>
-              <span className="brand-sub">de centrivosoft.com</span>
-            </div>
+            <img
+              src="./images/emaus-header-brand.webp"
+              width="240"
+              height="55"
+              alt="EMAUS POS - de centrivosoft.com"
+              className="brand-main-logo"
+              loading="eager"
+            />
           </a>
 
           <button
@@ -285,11 +279,14 @@ function App() {
           </button>
 
           <nav id="main-nav" className={`main-nav ${menuOpen ? 'is-open' : ''}`} aria-label="Navegación principal">
-            <a href="#inicio" onClick={closeMenu}>Inicio</a>
-            <a href="#funcionalidades" onClick={closeMenu}>Funcionalidades</a>
-            <a href="#pagos" onClick={closeMenu}>Medios de Pago</a>
-            <a href="#sectores" onClick={closeMenu}>Sectores</a>
-            <a href="#faq" onClick={closeMenu}>Preguntas</a>
+            <a href="#inicio" className="nav-link active" onClick={closeMenu}>
+              <span>Inicio</span>
+              <span className="nav-active-pill" aria-hidden="true"></span>
+            </a>
+            <a href="#funcionalidades" className="nav-link" onClick={closeMenu}>Funcionalidades</a>
+            <a href="#pagos" className="nav-link" onClick={closeMenu}>Medios de Pago</a>
+            <a href="#sectores" className="nav-link" onClick={closeMenu}>Sectores</a>
+            <a href="#faq" className="nav-link" onClick={closeMenu}>Preguntas</a>
             <a className="nav-cta" href={demoUrl} target="_blank" rel="noopener noreferrer" onClick={closeMenu}>
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -316,7 +313,8 @@ function App() {
               <h1 className="hero-heading">
                 <span className="hero-brand-name">EMAUS</span>
                 <span className="hero-tagline">
-                  Ventas, facturación, <em className="accent-blue">control e inventario</em>
+                  Ventas, facturación,<br />
+                  <em className="accent-blue">control e inventario</em>
                 </span>
               </h1>
               <p className="hero-lead">
@@ -345,58 +343,17 @@ function App() {
               </div>
             </div>
 
-            {/* Hero Visual Mockup */}
-            <div className="hero-visual" aria-label="Vista de la interfaz de EMAUS POS">
-              <div className="hero-bg-shape"></div>
-              
-              {/* Top Business Owners Avatars */}
-              <div className="hero-merchants-strip">
-                <div className="merchant-card">
-                  <img src="./images/store-qr.webp" alt="Comerciante en minimercado" width="1289" height="860" loading="eager" />
-                </div>
-                <div className="merchant-card">
-                  <img src="./images/bakery-store.webp" alt="Emprendedora en panadería" width="1290" height="860" loading="eager" />
-                </div>
-                <div className="merchant-card highlight">
-                  <img src="./images/cashier-retail.webp" alt="Cajera atendiendo cliente" width="1289" height="860" loading="eager" />
-                </div>
-              </div>
-
-              {/* Main Desktop Display Screen */}
-              <div className="monitor-frame">
-                <div className="monitor-top-bar">
-                  <div className="top-dots">
-                    <span></span><span></span><span></span>
-                  </div>
-                  <div className="top-title">EMAUS POS · Panel de Ventas</div>
-                </div>
+            {/* Hero Visual Composition Mockup */}
+            <div className="hero-visual" aria-label="Vista real de la interfaz y operación de EMAUS POS">
+              <div className="hero-visual-container">
                 <img
-                  src="./images/product-grid.webp"
-                  width="1294"
-                  height="809"
-                  alt="Pantalla de ventas EMAUS POS con catálogo de productos, precios y stock"
+                  src="./images/hero-pos-visual.webp"
+                  width="664"
+                  height="536"
+                  alt="Sistema de punto de venta EMAUS POS con comerciantes, monitor de ventas, escáner y ventana de cobro"
                   fetchpriority="high"
-                  decoding="async"
+                  className="hero-main-composition"
                 />
-              </div>
-
-              {/* Floating Payment Modal Simulation */}
-              <div className="hero-floating-modal" aria-hidden="true">
-                <div className="modal-inner">
-                  <div className="modal-header">
-                    <span className="modal-icon">💳</span>
-                    <span className="modal-title">Cobrar venta</span>
-                  </div>
-                  <div className="modal-pills">
-                    <span className="pill active">Débito</span>
-                    <span className="pill">Efectivo</span>
-                    <span className="pill">QR Bre-B</span>
-                  </div>
-                  <div className="modal-row">
-                    <span>Total a cobrar:</span>
-                    <strong>$ 199.124</strong>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -449,24 +406,14 @@ function App() {
               <div className="features-visual-col">
                 <div className="features-screen-wrap">
                   <img
-                    src="./images/product-grid.webp"
-                    width="1294"
-                    height="809"
-                    alt="Catálogo y punto de venta EMAUS POS"
+                    src="./images/funcionalidades-showcase.webp"
+                    width="534"
+                    height="500"
+                    alt="Catálogo, gestión en local y en la nube con EMAUS POS"
                     loading="lazy"
                     decoding="async"
+                    className="features-showcase-img"
                   />
-                  <div className="cloud-badge-card">
-                    <div className="cloud-icon-box">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0a77f5" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <strong>Accede desde tu local o desde la nube</strong>
-                      <p>Tu negocio siempre contigo</p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -521,33 +468,14 @@ function App() {
               <div className="payment-visual-col">
                 <div className="payment-screen-frame">
                   <img
-                    src="./images/payment-screen.webp"
-                    width="1108"
-                    height="847"
+                    src="./images/pagos-showcase.webp"
+                    width="684"
+                    height="536"
                     alt="Ventana de cobro y registro de medios de pago en EMAUS POS"
                     loading="lazy"
                     decoding="async"
+                    className="payment-showcase-img"
                   />
-                  
-                  {/* Floating Multi-payment badges */}
-                  <div className="floating-methods-bar" aria-label="Medios de pago soportados">
-                    <div className="method-chip">
-                      <span className="chip-icon">💵</span>
-                      <span>Efectivo</span>
-                    </div>
-                    <div className="method-chip active">
-                      <span className="chip-icon">💳</span>
-                      <span>Débito</span>
-                    </div>
-                    <div className="method-chip">
-                      <span className="chip-icon">⇄</span>
-                      <span>Transferencias</span>
-                    </div>
-                    <div className="method-chip">
-                      <span className="chip-icon">▦</span>
-                      <span>QR Bre-B</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
