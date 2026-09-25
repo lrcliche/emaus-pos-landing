@@ -1,0 +1,17 @@
+{
+  "name": "EMAUS POS",
+  "short_name": "EMAUS POS",
+  "description": "Ventas, facturación, control e inventario.",
+  "lang": "es-CO",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#073a74",
+  "icons": [
+    {
+      "src": "./favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

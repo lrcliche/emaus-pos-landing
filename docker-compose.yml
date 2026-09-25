@@ -1,0 +1,7 @@
+services:
+  emaus-pos-web:
+    build: .
+    container_name: emaus-pos-web
+    ports:
+      - "8080:80"
+    restart: unless-stopped
